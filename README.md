@@ -2,12 +2,15 @@
 
 This simple desktop application helps players of the browser game “Kantai
 Collection” (舰队Collection) calculate the fuel and ammunition consumed by
-their fleet during a single battle.  The game allows a fleet of up to six
-ships.  Each ship consumes 20% of its maximum fuel and ammo in a normal
-battle and 30% if the battle extends into the night.  
+their fleet during a single battle. It calculate resource consumption based 
+on the total resource needed to restock the ship, and take 20% of that to 
+work out the cost of each battle, if the battle extends into the night.  
 
 Calculator only account for standard battle consume, and not covering extras
 like repairing cost.
+
+Calculator also allows users to save the fleet they entered and load the fleet
+to the current editor.
 
 Data will be updated irregularly.
 
@@ -24,7 +27,10 @@ please send to yuzewang0706@gmail.com, thank you!
 程序基于单艘船完整补给所需的资源的20%计算出单词战斗消耗，夜战则再加额外10%。
 对于不能整除的情况则四舍五入，但由于游戏内四舍五入的机制不明，所以数据可能会出现个
 位数的误差。
+程序会显示每艘船单独的消耗和舰队消耗。
 程序只计算普通的战斗消耗，不包括类似入渠等额外消耗。
+
+其他功能包括保存输入的舰队，以及将保存的舰队录入当前编辑器。
 
 数据会不定期更新。
 
