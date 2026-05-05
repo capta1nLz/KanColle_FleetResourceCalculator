@@ -2,9 +2,12 @@
 
 This simple desktop application helps players of the browser game “Kantai
 Collection” (舰队Collection) calculate the fuel and ammunition consumed by
-their fleet during a single battle. It calculate resource consumption based 
+their fleet during a single battle. 
+
+It calculate resource consumption based 
 on the total resource needed to restock the ship, and take 20% of that to 
-work out the cost of each battle, if the battle extends into the night.  
+work out the cost of each battle, and another 10% if the battle extends into 
+the night.  
 
 Calculator only account for standard battle consume, and not covering extras
 like repairing cost.
