@@ -4,21 +4,29 @@
 """
 Fleet Resource Calculator
 =========================
-
 This simple desktop application helps players of the browser game “Kantai
-Collection” (舰队collection) calculate the fuel and ammunition consumed by
-their fleet during a single battle.  The game allows a fleet of up to six
-ships.  Each ship consumes 20% of its maximum fuel and ammo in a normal
-battle and 30% if the battle extends into the night.  The program reads
-per‑ship supply requirements from a CSV file (`ships.csv`) generated from
-the provided Excel data and lets users enter ship names or IDs.  It can
-also save and load named fleets for quick reference.
+Collection” (舰队Collection) calculate the fuel and ammunition consumed by
+their fleet during a single battle. 
+
+It calculate resource consumption based 
+on the total resource needed to restock the ship, and take 20% of that to 
+work out the cost of each battle, and another 10% if the battle extends into 
+the night.  
+
+Calculator only account for standard battle consume, and not covering extras
+like repairing cost.
+
+Calculator also allows users to save the fleet they entered and load the fleet
+to the current editor.
+
+Data will be updated irregularly.
 
 UI is written in Chinese at the this time, but preped for localization.
 English UI will be added when I finish other projects.
 
 The data is sourced from the KCWiki (舰娘百科). 
-If you can provide list of ship names and IDs in English, please send to yuzewang0706@gmail.com, thank you!
+If you can provide list of ship names and IDs in English, 
+please send to yuzewang0706@gmail.com, thank you!
 
 Author: Jeremy Wang
 Assisted by: ChatGPT
@@ -66,7 +74,6 @@ def normalize_id(value: str) -> str:
     text = str(value).strip()
     if not text:
         return ""
-    # 兼容 Excel 导出的 80.0、145.0
     if re.fullmatch(r"\d+\.0+", text):
         return text.split(".")[0]
     return text
