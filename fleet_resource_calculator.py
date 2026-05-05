@@ -77,7 +77,6 @@ def is_numeric_id(text: str) -> bool:
 
 
 def round_half_up_percent(base_value: int, percent: int) -> int:
-    """对正整数进行百分比计算后四舍五入。例：15 * 30% = 4.5 -> 5。"""
     return (base_value * percent + 50) // 100
 
 
@@ -129,7 +128,6 @@ class FleetResourceCalculatorApp:
                 if not row or len(row) < 5:
                     continue
 
-                # 兼容旧 5 列 CSV 和新 6 列 CSV。
                 if len(row) >= 6:
                     sort_id, display_id, wiki_id, name, fuel, ammo = row[:6]
                 else:
@@ -139,7 +137,6 @@ class FleetResourceCalculatorApp:
                 try:
                     ship = Ship(sort_id, display_id, wiki_id, name, int(fuel), int(ammo))
                 except ValueError:
-                    # 跳过可能存在的表头或异常行。
                     continue
 
                 if not ship.name:
@@ -148,7 +145,6 @@ class FleetResourceCalculatorApp:
                 self.ships.append(ship)
                 self.ships_by_name[ship.name] = ship
 
-                # ID 查找：显示编号和 KCWiki链接ID 都可用。
                 for candidate_id in (ship.display_id, ship.wiki_id):
                     if candidate_id:
                         self.ships_by_id[candidate_id] = ship
@@ -338,7 +334,6 @@ class FleetResourceCalculatorApp:
 
     def save_fleet(self):
         try:
-            # 先验证当前输入可以识别，避免保存错误舰队。
             self.get_current_fleet()
         except ValueError as e:
             messagebox.showwarning("输入错误", str(e))
@@ -384,7 +379,6 @@ class FleetResourceCalculatorApp:
                 self.id_entries[i].insert(0, item.get("id", ""))
                 self.name_entries[i].insert(0, item.get("name", ""))
             else:
-                # 兼容旧版 saved_fleets.json：旧版保存的是字符串列表。
                 text = str(item).strip()
                 if is_numeric_id(text):
                     self.id_entries[i].insert(0, normalize_id(text))
