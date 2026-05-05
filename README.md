@@ -1,2 +1,30 @@
 # KanColle_FleetResourceCalculator
-Python based application for calculating resource needed for each battle in Kantai Collection.
+
+This simple desktop application helps players of the browser game “Kantai
+Collection” (舰队collection) calculate the fuel and ammunition consumed by
+their fleet during a single battle.  The game allows a fleet of up to six
+ships.  Each ship consumes 20% of its maximum fuel and ammo in a normal
+battle and 30% if the battle extends into the night.  
+Calculator only account for standard battle consume, and not covering extras
+like repairing cost.
+
+UI is written in Chinese at the this time, but preped for localization.
+English UI will be added when I finish other projects.
+
+The data is sourced from the KCWiki (舰娘百科). 
+If you can provide list of ship names and IDs in English, 
+please send to yuzewang0706@gmail.com, thank you!
+
+舰队资源计算器是一个用来计算舰队资源消耗（只包括油和弹药）的简单程序。
+程序基于单艘船完整补给所需的资源的20%计算出单词战斗消耗，夜战则再加额外10%。
+对于不能整除的情况则四舍五入，但由于游戏内四舍五入的机制不明，所以数据可能会出现个
+位数的误差。
+程序只计算普通的战斗消耗，不包括类似入渠等额外消耗。
+
+目前程序仅支持中文界面以及舰船名称输入，但代码中以为其他语言扩展做好准备。
+英文UI可能会在我的其他项目完成后加入（大概）。
+本程序的数据取自舰娘百科（KCWiki，https://zh.kcwiki.cn/wiki/%E8%88%B0%E5%A8%98%E7%99%BE%E7%A7%91）。
+如果你能提供英文的舰船名称和id列表，请发至yuzewang0706@gmail.com，谢谢！
+
+
+Jeremy Wang
