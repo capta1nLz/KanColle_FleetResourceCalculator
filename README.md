@@ -15,10 +15,6 @@ like repairing cost.
 Calculator also allows users to save the fleet they entered and load the fleet
 to the current editor.
 
-*New* 
-You can now praise the machine god and let him bless your pc's machine spirit. 
-Giving you better chance in the construction.
-
 Data will be updated irregularly.
 
 UI is written in Chinese at the this time, but preped for localization.
@@ -27,6 +23,10 @@ English UI will be added when I finish other projects.
 The data is sourced from the KCWiki (舰娘百科). 
 If you can provide list of ship names and IDs in English, 
 please send to yuzewang0706@gmail.com, thank you!
+
+*New* 
+You can now praise the machine god and let him bless your pc's machine spirit. 
+Giving you better chance in the construction.
 
 
 舰队资源计算器是一个用来计算舰队资源消耗（只包括油和弹药）的简单程序。
@@ -39,10 +39,6 @@ please send to yuzewang0706@gmail.com, thank you!
 
 其他功能包括保存输入的舰队，以及将保存的舰队录入当前编辑器。
 
-*New*
-你现在可以在本程序中赞美万机之神欧姆弥赛亚，让他祝福你电脑的机魂。让你在大建时
-有更高几率出货。
-
 数据会不定期更新。
 
 目前程序仅支持中文界面以及舰船名称输入，但代码中以为其他语言扩展做好准备。
@@ -51,6 +47,9 @@ please send to yuzewang0706@gmail.com, thank you!
 本程序的数据取自舰娘百科（KCWiki，https://zh.kcwiki.cn/wiki/%E8%88%B0%E5%A8%98%E7%99%BE%E7%A7%91）。
 如果你能提供英文的舰船名称和id列表，请发至yuzewang0706@gmail.com，谢谢！
 
+*New*
+你现在可以在本程序中赞美万机之神欧姆弥赛亚，让他祝福你电脑的机魂。让你在大建时
+有更高几率出货。
 
-Jeremy Wang
+Jeremy Wang  
 提督名：楼主
