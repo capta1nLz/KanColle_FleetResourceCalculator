@@ -15,6 +15,9 @@ like repairing cost.
 Calculator also allows users to save the fleet they entered and load the fleet
 to the current editor.
 
+*New* You can now praise the machine god and let him bless your pc's machine spirit. 
+Giving you better chance in the construction.
+
 Data will be updated irregularly.
 
 UI is written in Chinese at the this time, but preped for localization.
@@ -34,6 +37,9 @@ please send to yuzewang0706@gmail.com, thank you!
 程序只计算普通的战斗消耗，不包括类似入渠等额外消耗。
 
 其他功能包括保存输入的舰队，以及将保存的舰队录入当前编辑器。
+
+*New*你现在可以在本程序中赞美万机之神欧姆弥赛亚，让他祝福你电脑的机魂。让你在大建时
+有更高几率出货。
 
 数据会不定期更新。
 
