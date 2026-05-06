@@ -48,8 +48,7 @@ Giving you better chance in the construction.
 如果你能提供英文的舰船名称和id列表，请发至yuzewang0706@gmail.com，谢谢！
 
 *New*  
-你现在可以在本程序中赞美万机之神欧姆弥赛亚，让他祝福你电脑的机魂。让你在大建时
-有更高几率出货。
+你现在可以在本程序中赞美万机之神欧姆弥赛亚，让他祝福你电脑的机魂。让你在大建时有更高几率出货。
 
 Jeremy Wang  
 提督名：楼主
