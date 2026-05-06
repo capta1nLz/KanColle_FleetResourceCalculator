@@ -32,6 +32,11 @@ Author: Jeremy Wang
 Assisted by: ChatGPT
 """
 
+"""
+ver2.0 update:
+Added button "Praise the Omnissiah" in the top right conner to please the machine spirit.
+"""
+
 import csv
 import json
 import os
@@ -43,6 +48,9 @@ from tkinter import messagebox, simpledialog, ttk
 TITLE = "舰队资源消耗计算器"
 SHIPS_CSV_NAME = "ships.csv"
 SAVED_FLEETS_NAME = "saved_fleets.json"
+POPUP_MAX_CHARS = 10
+POPUP_TEXT = "机魂大悦+1"
+POPUP_BUTTON_TEXT = "赞美欧姆弥赛亚"
 
 
 def get_app_dir() -> str:
@@ -74,6 +82,7 @@ def normalize_id(value: str) -> str:
     text = str(value).strip()
     if not text:
         return ""
+    # 兼容 Excel 导出的 80.0、145.0
     if re.fullmatch(r"\d+\.0+", text):
         return text.split(".")[0]
     return text
@@ -122,6 +131,8 @@ class FleetResourceCalculatorApp:
 
         self.id_entries = []
         self.name_entries = []
+        self.toast_widget = None
+        self.toast_after_id = None
 
         self._build_ui()
 
@@ -163,8 +174,15 @@ class FleetResourceCalculatorApp:
         main = ttk.Frame(self.master, padding=10)
         main.pack(fill=tk.BOTH, expand=True)
 
-        title = ttk.Label(main, text=TITLE, font=("Microsoft YaHei UI", 14, "bold"))
-        title.pack(anchor="w", pady=(0, 8))
+        top_bar = ttk.Frame(main)
+        top_bar.pack(fill=tk.X, pady=(0, 8))
+
+        title = ttk.Label(top_bar, text=TITLE, font=("Microsoft YaHei UI", 14, "bold"))
+        title.pack(side=tk.LEFT, anchor="w")
+
+        popup_control = ttk.Frame(top_bar)
+        popup_control.pack(side=tk.RIGHT, anchor="e")
+        ttk.Button(popup_control, text=POPUP_BUTTON_TEXT, command=self.show_center_popup).pack(side=tk.RIGHT)
 
         hint = ttk.Label(
             main,
@@ -251,6 +269,52 @@ class FleetResourceCalculatorApp:
         self.status_var = tk.StringVar(value=f"已载入舰船数据：{len(self.ships)} 条")
         status_bar = ttk.Label(main, textvariable=self.status_var, anchor="w", foreground="#555555")
         status_bar.pack(fill=tk.X, pady=(6, 0))
+
+    def _get_popup_text(self) -> str:
+        text = str(POPUP_TEXT).strip() or "提示"
+        if len(text) > POPUP_MAX_CHARS:
+            text = text[:POPUP_MAX_CHARS]
+        return text
+
+    def show_center_popup(self):
+        text = self._get_popup_text()
+
+        if self.toast_after_id is not None:
+            try:
+                self.master.after_cancel(self.toast_after_id)
+            except Exception:
+                pass
+            self.toast_after_id = None
+
+        if self.toast_widget is not None and self.toast_widget.winfo_exists():
+            self.toast_widget.destroy()
+            self.toast_widget = None
+
+        toast = tk.Frame(self.master, bg="#222222", bd=1, relief=tk.SOLID)
+        self.toast_widget = toast
+
+        label = tk.Label(
+            toast,
+            text=text,
+            bg="#222222",
+            fg="#FFFFFF",
+            font=("Microsoft YaHei UI", 16, "bold"),
+            padx=30,
+            pady=18,
+            justify=tk.CENTER,
+        )
+        label.pack(fill=tk.BOTH, expand=True)
+
+        toast.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+        toast.lift()
+
+        def close_toast():
+            if self.toast_widget is not None and self.toast_widget.winfo_exists():
+                self.toast_widget.destroy()
+            self.toast_widget = None
+            self.toast_after_id = None
+
+        self.toast_after_id = self.master.after(2000, close_toast)
 
     def find_ship(self, id_text: str = "", name_text: str = ""):
         ship_by_id = None
