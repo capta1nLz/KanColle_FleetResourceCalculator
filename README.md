@@ -24,7 +24,7 @@ The data is sourced from the KCWiki (舰娘百科).
 If you can provide list of ship names and IDs in English, 
 please send to yuzewang0706@gmail.com, thank you!
 
-ver 2.0:
+ver 2.0:  
 You can now praise the machine god and let him bless your pc's machine spirit. 
 Giving you better chance in the construction.
 
@@ -51,7 +51,7 @@ the total experience needed to reach certain level from certain level.
 本程序的数据取自舰娘百科（KCWiki，https://zh.kcwiki.cn/wiki/%E8%88%B0%E5%A8%98%E7%99%BE%E7%A7%91）。
 如果你能提供英文的舰船名称和id列表，请发至yuzewang0706@gmail.com，谢谢！
 
-ver 2.0: 
+ver 2.0:   
 你现在可以在本程序中赞美万机之神欧姆弥赛亚，让他祝福你电脑的机魂。让你在大建时有更高几率出货。
 
 *New*  
