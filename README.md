@@ -28,7 +28,7 @@ ver 2.0:
 You can now praise the machine god and let him bless your pc's machine spirit. 
 Giving you better chance in the construction.
 
-*New* 
+*New*  
 ver 3.0:
 You can now check the experience needed to level up for each level, and calculate 
 the total experience needed to reach certain level from certain level.
@@ -54,7 +54,7 @@ the total experience needed to reach certain level from certain level.
 ver 2.0: 
 你现在可以在本程序中赞美万机之神欧姆弥赛亚，让他祝福你电脑的机魂。让你在大建时有更高几率出货。
 
-*New* 
+*New*  
 ver 3.0:
 你现在可以查看舰船每级升级需要的经验，并计算从某级到某级所需的经验。
 
